@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import List from "./components/List";
+import { useEffect, useState } from "react";
+import { getAllBday } from "./services/bday-services";
 
 function App() {
+  const [bdays, setbdays] = useState([]);
+
+  useEffect(() => {
+    getAllBday().then((res) => {
+      setbdays(res.data);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <List bdays={bdays} />
     </div>
   );
 }
