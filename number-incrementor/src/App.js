@@ -6,9 +6,10 @@ function App() {
   const incrementByOne = () => {
     setnumber(number + 1);
   };
+
   return (
     <div className="container">
-      <button>Number</button>
+      <button onClick={incrementByOne}>{number}</button>
     </div>
   );
 }
