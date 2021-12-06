@@ -21,7 +21,7 @@ public class TourController {
         return tourService.getAllTour();
     }
 
-    @DeleteMapping("/:id")
+    @DeleteMapping("/{id}")
     public String deleteIdByTour(@PathVariable("id") long id){
         tourService.deleteTourById(id);
         return "Successfully deleted";
