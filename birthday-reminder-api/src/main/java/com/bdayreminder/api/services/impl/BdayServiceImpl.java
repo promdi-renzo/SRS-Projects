@@ -39,5 +39,10 @@ public class BdayServiceImpl implements BdayService {
         repository.save(bday);
     }
 
+    @Override
+    public void updateBday(Bday bday) {
+        repository.save(bday);
+    }
+
 
 }

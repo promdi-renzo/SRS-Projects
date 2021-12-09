@@ -9,5 +9,6 @@ public interface BdayService {
     List<Bday> getAllBday();
     Bday getBdayById(long id);
     void addBday(Bday bday);
-
+    void updateBday(Bday bday);
 }
+
