@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("/api")
+@RequestMapping("/api/bday")
 @RestController
 @CrossOrigin("*")
 public class BdayController {
@@ -19,7 +19,7 @@ public class BdayController {
     @Autowired
     private BdayService service;
 
-    @GetMapping("/bday")
+    @GetMapping
     public List<Bday> getAllBday(){
         return service.getAllBday();
     }
