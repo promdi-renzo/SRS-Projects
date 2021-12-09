@@ -10,5 +10,6 @@ public interface BdayService {
     Bday getBdayById(long id);
     void addBday(Bday bday);
     void updateBday(Bday bday);
+    void deleteBdayById(long id);
 }
 

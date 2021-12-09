@@ -44,5 +44,8 @@ public class BdayServiceImpl implements BdayService {
         repository.save(bday);
     }
 
-
+    @Override
+    public void deleteBdayById(long id) {
+        repository.deleteById(id);
+    }
 }
