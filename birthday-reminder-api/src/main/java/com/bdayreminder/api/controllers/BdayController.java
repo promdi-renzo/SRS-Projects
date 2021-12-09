@@ -37,4 +37,10 @@ public class BdayController {
         service.updateBday(bday);
         return bday;
     }
+
+    @DeleteMapping("/{id}")
+    public String deleteBday(@PathVariable("id") long id){
+        service.deleteBdayById(id);
+        return "Successfully deleted";
+    }
 }
