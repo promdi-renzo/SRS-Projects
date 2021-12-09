@@ -26,9 +26,15 @@ public class BdayController {
         return service.getBdayById(id);
     }
 
-    @PostMapping()
+    @PostMapping
     public Bday getBday(@RequestBody Bday bday){
         service.addBday(bday);
+        return bday;
+    }
+
+    @PatchMapping
+    public Bday updateBday(@RequestBody Bday bday){
+        service.updateBday(bday);
         return bday;
     }
 }
