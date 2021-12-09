@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class ApiApplication  {
+public class ApiApplication {
 
 	@Autowired
 	private BdayService service;
@@ -19,17 +19,17 @@ public class ApiApplication  {
 		SpringApplication.run(ApiApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner demoData(BdayRepository repo) {
-		return args -> {
+	 @Bean
+	 public CommandLineRunner demoData(BdayRepository repo) {
+		 return args -> {
 
-			repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
-			repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
-			repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
-			repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
-			repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
+		 repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
+		 repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
+		 repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
+		 repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
+		 repo.save(new Bday(0, "Renzo", "Cabarios", 21, "https://picsum.photos/200"));
 
-		};
-	}
+		 };
+	 }
 
 }
