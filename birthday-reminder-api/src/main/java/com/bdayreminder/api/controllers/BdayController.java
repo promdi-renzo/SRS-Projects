@@ -25,4 +25,10 @@ public class BdayController {
     public Bday getBday(@PathVariable("id") long id){
         return service.getBdayById(id);
     }
+
+    @PostMapping()
+    public Bday getBday(@RequestBody Bday bday){
+        service.addBday(bday);
+        return bday;
+    }
 }
