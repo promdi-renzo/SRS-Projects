@@ -27,7 +27,7 @@ public class BdayController {
     }
 
     @PostMapping
-    public Bday getBday(@RequestBody Bday bday){
+    public Bday addBday(@RequestBody Bday bday){
         service.addBday(bday);
         return bday;
     }
