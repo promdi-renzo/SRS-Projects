@@ -49,5 +49,3 @@ module.exports = {
   updateUser,
   deleteUser,
 };
-
-const hashPass = async (password) => {};
