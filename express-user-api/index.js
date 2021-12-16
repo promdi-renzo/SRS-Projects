@@ -2,12 +2,14 @@ const express = require("express");
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const userRoutes = require("./app/routes/user.routes");
+const authRoutes = require("./app/routes/auth.routes");
 const connectDB = require("./app/db/connect");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }), bodyParser.json());
 const PORT = process.env.PORT || 3333;
 const MONDO_CON = process.env.MONGO_CON || "mongodb://localhost/user";
 
+app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
 
 const start = async () => {
