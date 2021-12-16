@@ -12,8 +12,8 @@ const authUser = async (req, res) => {
 
   user
     ? (await bcrypt.compare(password, user.password))
-      ? (msg = jwt.sign({ username: username }, "secret", {
-          expiresIn: "1800s",
+      ? (msg = jwt.sign({ username: username }, SECRET, {
+          expiresIn: "1y",
         }))
       : (msg = "wrong pass")
     : (msg = "not found");
