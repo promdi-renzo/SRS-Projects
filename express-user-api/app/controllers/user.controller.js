@@ -1,8 +1,7 @@
 const User = require("../models/user.model");
 const bcrypt = require("bcryptjs");
-require("dotenv").config();
 
-const HASH_SALT = process.env.HASH_SALT || 5;
+const HASH_SALT = 10;
 
 const getAllUser = async (req, res) => {
   const users = await User.find({});
@@ -18,10 +17,10 @@ const getUser = async (req, res) => {
 const adduser = async (req, res) => {
   const { username, password } = req.body;
 
-  await bcrypt.hash(password, HASH_SALT, function (err, hash) {
-    const user = User.create({ username: username, password: hash });
-    res.send({ user });
-  });
+  const hashed = await bcrypt.hash(password, HASH_SALT);
+
+  const user = User.create({ username: username, password: hashed });
+  res.send({ user });
 };
 
 const updateUser = async (req, res) => {
