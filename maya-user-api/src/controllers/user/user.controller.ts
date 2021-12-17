@@ -2,12 +2,13 @@ import { Get, Patch, Post, Delete, Put } from "@mayajs/common";
 import { MayaJsContext } from "@mayajs/router";
 import { Controller } from "@mayajs/core";
 import { UserServices } from "./user.service";
+import validate from "../../validators/user.validators";
 
 @Controller()
 export class UserController {
   constructor(private services: UserServices) {}
 
-  @Post()
+  @Post({ path: "/", middlewares: validate.user })
   async createUser({ body }: MayaJsContext): Promise<any> {
     return await this.services.add(body);
   }
@@ -22,7 +23,7 @@ export class UserController {
     return await this.services.getUserById(params.id);
   }
 
-  @Patch("/:id")
+  @Patch({ path: "/:id", middlewares: validate.user })
   async updateUser({ body, params }: MayaJsContext): Promise<any> {
     return await this.services.updateUser(params.id, body);
   }
