@@ -1,8 +1,9 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const tasks = require("./app/routes/tasks");
-const connectDB = require("./app/db/connect");
+const taskRoute = require("./app/routes/task.route");
+const connectDB = require("./app/db/index");
+const ENV = require("./app/environment/index");
 
 const app = express();
 app.use(cors());
@@ -10,18 +11,15 @@ app.use(express.json());
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3333;
-const MONGO_CON = process.env.MONGO_CON || "mongodb://localhost/main";
-
 // routes
-app.use("/api/v1/task", tasks);
+app.use("/api/v1/task", taskRoute);
 
 const start = async () => {
-  await connectDB(MONGO_CON)
+  await connectDB(ENV.mongo_con)
     .then(() => {
       console.log("Connected to DB");
-      app.listen(PORT, () => {
-        console.log(`Server start on ${PORT}`);
+      app.listen(ENV.port, () => {
+        console.log(`Server start on ${ENV.port}`);
       });
     })
     .catch((err) => {
