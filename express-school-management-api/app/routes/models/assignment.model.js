@@ -4,7 +4,7 @@ const CONST = require("../../constants/index");
 const AssignmentSchema = mongoose.Schema({
   activity: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: CONST.model.activty,
+    ref: CONST.model.assignment,
   },
   filePath: {
     type: String,
