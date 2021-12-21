@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const ENV = {
   port: process.env.PORT || 9000,
@@ -6,4 +7,4 @@ const ENV = {
   hash_salt: Number(process.env.HASH_SALT) || 10,
 };
 
-module.exports = ENV;
+export default ENV;
