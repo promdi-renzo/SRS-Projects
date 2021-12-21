@@ -1,5 +1,4 @@
-const userService = require("../services/user.service");
-const CONST = require("../../constants/index");
+import userService from "../services/user.service.js";
 
 const getAllUser = async (req, res) => {
   const users = await userService.getAllUser();
@@ -29,10 +28,4 @@ const deleteUserById = async (req, res) => {
   res.send({ users });
 };
 
-module.exports = {
-  getAllUser,
-  getUserById,
-  addUser,
-  updateUser,
-  deleteUserById,
-};
+export { getAllUser, getUserById, addUser, updateUser, deleteUserById };
