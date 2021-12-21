@@ -13,4 +13,4 @@ const CONST = {
   },
 };
 
-module.exports = CONST;
+export default CONST;
