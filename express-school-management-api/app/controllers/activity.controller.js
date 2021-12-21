@@ -1,4 +1,4 @@
-const activityService = require("../services/activity.service");
+import activityService from "../services/activity.service.js";
 
 const getAllActivity = async (req, res) => {
   const activities = await activityService.getAllActivity();
@@ -28,7 +28,7 @@ const deleteActivityById = async (req, res) => {
   res.send({ activity });
 };
 
-module.exports = {
+export {
   getAllActivity,
   getActivityById,
   addActivity,

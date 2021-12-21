@@ -1,4 +1,4 @@
-const activityModel = require("../models/activity.model");
+import activityModel from "../models/activity.model.js";
 
 const getAllActivity = async () => {
   const activities = await activityModel.find();
@@ -25,7 +25,7 @@ const deleteActivityById = async (id) => {
   return activity;
 };
 
-module.exports = {
+export default {
   getAllActivity,
   getActivityById,
   addActivity,

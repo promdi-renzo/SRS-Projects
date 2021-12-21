@@ -1,20 +1,21 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
-const connectDB = require("./app/db/connect");
-const userRoute = require("./app/routes/user.route");
-const activityRoute = require("./app/routes/activity.route");
-const announcementRoute = require("./app/routes/announcement.route");
-const assignmentRoute = require("./app/routes/assignment.route");
-const gradeRoute = require("./app/routes/grade.route");
-const ENV = require("./app/environment/index");
+import express from "express";
+import bodyParser from "body-parser";
+import ENV from "./app/environment/index.js";
+import connectDB from "./app/db/connect.js";
+import userRoute from "./app/routes/user.route.js";
+import activityRoute from "./app/routes/activity.route.js";
+// const activityRoute = require();
+// const announcementRoute = require("./app/routes/announcement.route");
+// const assignmentRoute = require("./app/routes/assignment.route");
+// const gradeRoute = require("./app/routes/grade.route");
 
+const app = express();
 app.use(bodyParser.json());
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/activity", activityRoute);
-app.use("/api/v1/announcement", announcementRoute);
-app.use("/api/v1/assignment", assignmentRoute);
-app.use("/api/v1/grade", gradeRoute);
+// app.use("/api/v1/announcement", announcementRoute);
+// app.use("/api/v1/assignment", assignmentRoute);
+// app.use("/api/v1/grade", gradeRoute);
 
 const start = () => {
   connectDB(ENV.mongo_con).then(() => {
