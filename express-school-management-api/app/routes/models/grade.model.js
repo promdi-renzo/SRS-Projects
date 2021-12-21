@@ -4,11 +4,11 @@ const CONST = require("../../constants/index");
 const GradeSchema = mongoose.Schema({
   activity: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: CONST.model.activty,
+    ref: CONST.model.activity,
   },
   student: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: CONST.model.student,
+    ref: CONST.model.user,
   },
   grade: {
     type: Number,
