@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CONST = require("../../constants/index");
+const CONST = require("../constants/index");
 
 const GradeSchema = mongoose.Schema({
   activity: {

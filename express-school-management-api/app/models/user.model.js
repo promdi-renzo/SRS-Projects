@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const CONST = require("../../constants/index");
+import mongoose from "mongoose";
+import CONST from "../constants/index.js";
 
 const UserSchema = mongoose.Schema({
   username: {
@@ -17,4 +17,4 @@ const UserSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(CONST.model.user, UserSchema);
+export default mongoose.model(CONST.model.user, UserSchema);
