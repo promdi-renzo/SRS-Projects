@@ -2,7 +2,7 @@ const assignmentModel = require("../models/assignment.model");
 
 const getAllAssignment = async () => {
   const assignments = await assignmentModel.find();
-  return activities;
+  return assignments;
 };
 
 const getAssignmentById = async (id) => {
