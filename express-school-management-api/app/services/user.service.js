@@ -1,5 +1,5 @@
-const userModel = require("../models/user.model");
-const bcrypt = require("bcryptjs");
+import userModel from "../models/user.model.js";
+import bcrypt from "bcryptjs";
 
 const getAllUser = async () => {
   const users = await userModel.find();
@@ -41,10 +41,4 @@ const parseUser = async (body, role) => {
   };
 };
 
-module.exports = {
-  getAllUser,
-  getUserById,
-  addUser,
-  updateUser,
-  deleteUserById,
-};
+export default { getAllUser, getUserById, addUser, updateUser, deleteUserById };
