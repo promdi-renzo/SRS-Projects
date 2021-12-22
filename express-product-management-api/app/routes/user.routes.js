@@ -1,14 +1,15 @@
-const router = require("express").Router();
-const auth = require("../middlewares/auth");
-const {
+import auth from "../middlewares/auth.js";
+import { Router } from "express";
+import {
   getAllUser,
   getUserById,
   addUser,
   updateUser,
   deleteUserById,
   authUser,
-} = require("../controllers/user.controller");
+} from "../controllers/user.controller.js";
 
+const router = Router();
 router.route("/auth").post(authUser);
 router.route("/").get(auth.authenticate, getAllUser).post(addUser);
 router
@@ -17,4 +18,4 @@ router
   .patch(auth.authenticate, updateUser)
   .delete(auth.authenticate, deleteUserById);
 
-module.exports = router;
+export default router;

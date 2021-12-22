@@ -1,7 +1,7 @@
-const User = require("../models/user.model");
-const bcrypt = require("bcryptjs");
-const ENV = require("../environment/environment");
-const jwt = require("jsonwebtoken");
+import User from "../models/user.model.js";
+import bcrypt from "bcryptjs";
+import ENV from "../environment/environment.js";
+import jwt from "jsonwebtoken";
 
 const authUser = async (body) => {
   const { username, password } = body;
@@ -39,7 +39,7 @@ const deleteUserById = (id) => {
   return User.findByIdAndDelete({ _id: id });
 };
 
-module.exports = {
+export default {
   getAllUser,
   getUserById,
   addUser,

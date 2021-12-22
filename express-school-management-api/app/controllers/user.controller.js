@@ -1,4 +1,5 @@
 import userService from "../services/user.service.js";
+import CONST from "../constants/index.js";
 
 const getAllUser = async (req, res) => {
   const users = await userService.getAllUser();

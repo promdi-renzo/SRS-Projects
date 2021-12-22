@@ -1,10 +1,11 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
+import ENV from "../environment/environment.js";
 
 const authenticate = (req, res, next) => {
   const { authorization } = req.headers;
   const token = authorization.split(" ")[1];
 
-  const isVerified = jwt.verify(token, "jwt", function (err, decoded) {
+  const isVerified = jwt.verify(token, ENV.jwt_key, function (err, decoded) {
     if (!err) {
       return decoded;
     }
@@ -16,4 +17,4 @@ const authenticate = (req, res, next) => {
   next();
 };
 
-module.exports = { authenticate };
+export default { authenticate };

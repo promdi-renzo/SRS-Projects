@@ -1,11 +1,11 @@
-const express = require("express");
-const ENV = require("./app/environment/environment");
-const connectDB = require("./app/db/connect");
-const bodyParser = require("body-parser");
+import express from "express";
+import ENV from "./app/environment/environment.js";
+import connectDB from "./app/db/connect.js";
+import bodyParser from "body-parser";
+import userRoute from "./app/routes/user.routes.js";
+import productRoute from "./app/routes/product.routes.js";
 
 const app = express();
-const userRoute = require("./app/routes/user.routes");
-const productRoute = require("./app/routes/product.routes");
 
 // server initialization
 

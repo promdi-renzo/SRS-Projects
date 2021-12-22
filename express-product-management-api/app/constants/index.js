@@ -3,4 +3,4 @@ const CONST = {
   product: "Product",
 };
 
-module.exports = CONST;
+export default CONST;

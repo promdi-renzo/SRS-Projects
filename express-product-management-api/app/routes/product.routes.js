@@ -1,13 +1,13 @@
-const router = require("express").Router();
-const auth = require("../middlewares/auth");
-const {
+import { Router } from "express";
+import auth from "../middlewares/auth.js";
+import {
   getAllProduct,
   getProductById,
   addProduct,
   updateProduct,
   deleteProductById,
-} = require("../controllers/product.controller");
-
+} from "../controllers/product.controller.js";
+const router = Router();
 router.use(auth.authenticate);
 router.route("/").get(getAllProduct).post(addProduct);
 router
@@ -16,4 +16,4 @@ router
   .patch(updateProduct)
   .delete(deleteProductById);
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-const productService = require("../services/product.services");
+import productService from "../services/product.services.js";
 
 const getAllProduct = async (req, res) => {
   const products = await productService.getAllProduct();
@@ -28,7 +28,7 @@ const deleteProductById = async (req, res) => {
   res.send({ product });
 };
 
-module.exports = {
+export {
   getAllProduct,
   getProductById,
   addProduct,

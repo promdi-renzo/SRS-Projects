@@ -1,4 +1,4 @@
-const userService = require("../services/user.services");
+import userService from "../services/user.services.js";
 
 const authUser = async (req, res) => {
   const token = await userService.authUser(req.body);
@@ -37,7 +37,7 @@ const deleteUserById = async (req, res) => {
   res.send({ user });
 };
 
-module.exports = {
+export {
   getAllUser,
   getUserById,
   addUser,

@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const CONST = require("../constants/index");
+import mongoose from "mongoose";
+import CONST from "../constants/index.js";
 
 const ProductSchema = mongoose.Schema({
   imgPath: {
@@ -24,4 +24,4 @@ const ProductSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(CONST.product, ProductSchema);
+export default mongoose.model(CONST.product, ProductSchema);
