@@ -6,6 +6,7 @@ import {
   updateAssignment,
   deleteAssignmentById,
 } from "../controllers/assignment.controller.js";
+
 const router = Router();
 router.route("/").get(getAllAssignment).post(addAssignment);
 router

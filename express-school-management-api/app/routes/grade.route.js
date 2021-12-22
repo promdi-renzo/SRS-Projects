@@ -1,12 +1,13 @@
-const router = require("express").Router();
-const {
+import { Router } from "express";
+import {
   getAllGrade,
   getGradeById,
   addGrade,
   updateGrade,
   deleteGradeById,
-} = require("./controllers/grade.controller");
+} from "../controllers/grade.controller.js";
 
+const router = Router();
 router.route("/").get(getAllGrade).post(addGrade);
 router
   .route("/:id")
@@ -14,4 +15,4 @@ router
   .patch(updateGrade)
   .delete(deleteGradeById);
 
-module.exports = router;
+export default router;

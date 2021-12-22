@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const CONST = require("../constants/index");
+import mongoose from "mongoose";
+import CONST from "../constants/index.js";
 
 const GradeSchema = mongoose.Schema({
   activity: {
@@ -16,4 +16,4 @@ const GradeSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(CONST.model.grade, GradeSchema);
+export default mongoose.model(CONST.model.grade, GradeSchema);

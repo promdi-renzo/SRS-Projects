@@ -1,4 +1,4 @@
-const gradeService = require("../services/grade.service");
+import gradeService from "../services/grade.service.js";
 
 const getAllGrade = async (req, res) => {
   const grades = await gradeService.getAllGrade();
@@ -28,10 +28,4 @@ const deleteGradeById = async (req, res) => {
   res.send({ grade });
 };
 
-module.exports = {
-  getAllGrade,
-  getGradeById,
-  addGrade,
-  updateGrade,
-  deleteGradeById,
-};
+export { getAllGrade, getGradeById, addGrade, updateGrade, deleteGradeById };

@@ -1,4 +1,4 @@
-const gradeModel = require("../models/grade.model");
+import gradeModel from "../models/grade.model.js";
 
 const getAllGrade = async () => {
   const grades = await gradeModel.find();
@@ -25,7 +25,7 @@ const deleteGradeById = async (id) => {
   return grade;
 };
 
-module.exports = {
+export default {
   getAllGrade,
   getGradeById,
   addGrade,
