@@ -1,4 +1,4 @@
-const assignmentService = require("../services/assignment.service");
+import assignmentService from "../services/assignment.service.js";
 
 const getAllAssignment = async (req, res) => {
   const assignments = await assignmentService.getAllAssignment();
@@ -28,7 +28,7 @@ const deleteAssignmentById = async (req, res) => {
   res.send({ assignemnt });
 };
 
-module.exports = {
+export {
   getAllAssignment,
   getAssignmentById,
   addAssignment,

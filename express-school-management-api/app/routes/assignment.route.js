@@ -1,12 +1,12 @@
-const router = require("express").Router();
-const {
+import { Router } from "express";
+import {
   getAllAssignment,
   getAssignmentById,
   addAssignment,
   updateAssignment,
   deleteAssignmentById,
-} = require("./controllers/assignment.controller");
-
+} from "../controllers/assignment.controller.js";
+const router = Router();
 router.route("/").get(getAllAssignment).post(addAssignment);
 router
   .route("/:id")
@@ -14,4 +14,4 @@ router
   .patch(updateAssignment)
   .delete(deleteAssignmentById);
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-const assignmentModel = require("../models/assignment.model");
+import assignmentModel from "../models/assignment.model.js";
 
 const getAllAssignment = async () => {
   const assignments = await assignmentModel.find();
@@ -25,7 +25,7 @@ const deleteAssignmentById = async (id) => {
   return assignment;
 };
 
-module.exports = {
+export default {
   getAllAssignment,
   getAssignmentById,
   addAssignment,

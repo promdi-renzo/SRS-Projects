@@ -5,8 +5,7 @@ import connectDB from "./app/db/connect.js";
 import userRoute from "./app/routes/user.route.js";
 import activityRoute from "./app/routes/activity.route.js";
 import announcementRoute from "./app/routes/announcement.route.js";
-// const announcementRoute = require("./app/routes/announcement.route");
-// const assignmentRoute = require("./app/routes/assignment.route");
+import assignmentRoute from "./app/routes/assignment.route.js";
 // const gradeRoute = require("./app/routes/grade.route");
 
 const app = express();
@@ -14,7 +13,7 @@ app.use(bodyParser.json());
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/activity", activityRoute);
 app.use("/api/v1/announcement", announcementRoute);
-// app.use("/api/v1/assignment", assignmentRoute);
+app.use("/api/v1/assignment", assignmentRoute);
 // app.use("/api/v1/grade", gradeRoute);
 
 const start = () => {
