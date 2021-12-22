@@ -2,7 +2,7 @@
 
 ## ERD
 
-![image](https://user-images.githubusercontent.com/72588010/146863888-7bd9411f-1aa0-4691-89c7-feecba4a87c0.png)
+![image](https://user-images.githubusercontent.com/72588010/147032325-77265199-82b0-4e6a-b49a-1c47418f6282.png)
 
 ## Timelog
 
