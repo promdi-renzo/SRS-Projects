@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const CONST = require("../../constants/index");
+import mongoose from "mongoose";
+import CONST from "../constants/index.js";
 
 const AnnouncementSchema = mongoose.Schema({
   teacher: {
@@ -17,4 +17,4 @@ const AnnouncementSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(CONST.model.announcement, AnnouncementSchema);
+export default mongoose.model(CONST.model.announcement, AnnouncementSchema);

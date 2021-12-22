@@ -1,4 +1,4 @@
-const announcementModel = require("../models/announcement.model");
+import announcementModel from "../models/announcement.model.js";
 
 const getAllAnnouncement = async () => {
   const activities = await announcementModel.find();
@@ -25,7 +25,7 @@ const deleteAnnouncementById = async (id) => {
   return activity;
 };
 
-module.exports = {
+export default {
   getAllAnnouncement,
   getAnnouncementById,
   addAnnouncement,

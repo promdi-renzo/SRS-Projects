@@ -1,12 +1,13 @@
-const router = require("express").Router();
-const {
+import { Router } from "express";
+import {
   getAllAnnouncement,
   getAnnouncementById,
   addAnnouncement,
   updateAnnouncement,
   deleteAnnouncementById,
-} = require("./controllers/announcement.controller");
+} from "../controllers/announcement.controller.js";
 
+const router = Router();
 router.route("/").get(getAllAnnouncement).post(addAnnouncement);
 router
   .route("/:id")
@@ -14,4 +15,4 @@ router
   .patch(updateAnnouncement)
   .delete(deleteAnnouncementById);
 
-module.exports = router;
+export default router;

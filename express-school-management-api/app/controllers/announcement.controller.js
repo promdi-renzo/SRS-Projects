@@ -1,4 +1,4 @@
-const announcementService = require("../services/announcement.service");
+import announcementService from "../services/announcement.service.js";
 
 const getAllAnnouncement = async (req, res) => {
   const announcements = await announcementService.getAllAnnouncement();
@@ -31,7 +31,7 @@ const deleteAnnouncementById = async (req, res) => {
   res.send({ announcement });
 };
 
-module.exports = {
+export {
   getAllAnnouncement,
   getAnnouncementById,
   addAnnouncement,
