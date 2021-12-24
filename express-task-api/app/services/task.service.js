@@ -1,11 +1,11 @@
-const Task = require("../models/task.model");
+import Task from "../models/task.model.js";
 
 const getAllTask = async () => {
   const tasks = await Task.find({});
   return tasks;
 };
 
-const getTask = async (id) => {
+const getTaskById = async (id) => {
   const task = await Task.findOne({ _id: id });
   return task;
 };
@@ -25,10 +25,4 @@ const deleteTask = async (id) => {
   return task;
 };
 
-module.exports = {
-  getAllTask,
-  getTask,
-  addTask,
-  updateTask,
-  deleteTask,
-};
+export default { getAllTask, getTaskById, addTask, updateTask, deleteTask };

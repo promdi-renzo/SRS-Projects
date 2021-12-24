@@ -1,4 +1,4 @@
-const taskService = require("../services/task.service");
+import taskService from "../services/task.service.js";
 
 const getAllTask = async (req, res) => {
   const tasks = await taskService.getAllTask();
@@ -7,7 +7,7 @@ const getAllTask = async (req, res) => {
 
 const getTask = async (req, res) => {
   const { id } = req.params;
-  const task = await taskService.getAllTask(id);
+  const task = await taskService.getTaskById(id);
   res.send({ task });
 };
 
@@ -28,10 +28,4 @@ const deleteTask = async (req, res) => {
   res.send({ task });
 };
 
-module.exports = {
-  getAllTask,
-  getTask,
-  addTask,
-  updateTask,
-  deleteTask,
-};
+export { getAllTask, getTask, addTask, updateTask, deleteTask };

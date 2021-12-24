@@ -1,15 +1,12 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const cors = require("cors");
-const taskRoute = require("./app/routes/task.route");
-const connectDB = require("./app/db/index");
-const ENV = require("./app/environment/index");
+import express from "express";
+import cors from "cors";
+import taskRoute from "./app/routes/task.route.js";
+import connectDB from "./app/db/index.js";
+import ENV from "./app/environment/index.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-dotenv.config();
 
 // routes
 app.use("/api/v1/task", taskRoute);

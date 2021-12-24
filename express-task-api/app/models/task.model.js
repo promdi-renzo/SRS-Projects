@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const CONST = require("../constants/index");
+import mongoose from "mongoose";
+import CONST from "../constants/index.js";
 
 const TaskSchema = new mongoose.Schema({
   name: {
@@ -13,4 +13,4 @@ const TaskSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(CONST.task, TaskSchema);
+export default mongoose.model(CONST.task, TaskSchema);
