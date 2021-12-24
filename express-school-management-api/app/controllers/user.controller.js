@@ -7,7 +7,8 @@ const getAllUser = async (req, res) => {
 };
 
 const getUserById = async (req, res) => {
-  const user = await userService.getUserById();
+  const { id } = req.params;
+  const user = await userService.getUserById(id);
   res.send({ user });
 };
 
