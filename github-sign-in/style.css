@@ -5,6 +5,7 @@
   --border: 1px solid #1e232a;
   --border-hover: 1px solid #0d0e11;
   --font: "Roboto", monospace;
+  --img-size: 46px;
 }
 
 * {
@@ -18,8 +19,8 @@
 }
 
 img {
-  width: 46px;
-  height: 47px;
+  width: var(--img-size);
+  height: var(--img-size);
 }
 
 body {
