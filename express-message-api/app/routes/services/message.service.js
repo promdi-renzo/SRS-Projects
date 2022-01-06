@@ -1,23 +1,25 @@
-import messageModel from "../models/message.model.js";
+import Message from "../models/message.model.js";
 
 const getAll = async () => {
-  return await messageModel.find();
+  const result = await Message.find({});
+  console.log(result);
+  return result;
 };
 
 const getById = async (id) => {
-  return await messageModel.findById({ _id: id });
+  return await Message.findById({ _id: id });
 };
 
 const add = async (body) => {
-  return await messageModel.create(body);
+  return await Message.create(body);
 };
 
 const update = async (id, body) => {
-  return await messageModel.findByIdAndUpdate({ _id: id }, body, { new: true });
+  return await Message.findByIdAndUpdate({ _id: id }, body, { new: true });
 };
 
 const deleteById = async (id) => {
-  return await messageModel.findByIdAndDelete({ _id: id });
+  return await Message.findByIdAndDelete({ _id: id });
 };
 
 export default { getAll, getById, add, update, deleteById };

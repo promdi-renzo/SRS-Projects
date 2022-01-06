@@ -2,9 +2,8 @@ import mongoose from "mongoose";
 import CONST from "../../constants/index.js";
 
 const schema = mongoose.Schema({
-  content: {
+  message: {
     type: String,
-    default: "",
   },
 });
 
